@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="SmartHotelManagement.Views.Dashboard_View"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SmartHotelManagement.Views"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+
+        <!-- Card Style -->
+        <Style x:Key="StatCard" TargetType="Border">
+
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="CornerRadius" Value="12"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Padding" Value="20"/>
+
+            <Setter Property="Effect">
+                <Setter.Value>
+
+                    <DropShadowEffect BlurRadius="15"
+                                      ShadowDepth="1"
+                                      Opacity="0.1"/>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+    </UserControl.Resources>
+
+    <!-- MAIN -->
+    <Grid Background="#F8FAFC">
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <StackPanel Grid.Row="0"
+                    Margin="25,20,25,20">
+
+            <TextBlock Text="Dashboard"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       Foreground="#1E293B"/>
+
+            <TextBlock Text="Welcome back, Manager"
+                       FontSize="14"
+                       Foreground="#64748B"
+                       Margin="0,5,0,0"/>
+
+        </StackPanel>
+
+        <!-- STATISTICS -->
+        <UniformGrid Grid.Row="1"
+                     Columns="3"
+                     Margin="15,0,15,0">
+
+            <!-- TOTAL ROOM -->
+            <Border Style="{StaticResource StatCard}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Total Rooms"
+                               FontSize="14"
+                               Foreground="#64748B"/>
+
+                    <TextBlock x:Name="txtTotalRooms"
+                               Text="0"
+                               FontSize="34"
+                               FontWeight="Bold"
+                               Foreground="#3B82F6"
+                               Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- AVAILABLE -->
+            <Border Style="{StaticResource StatCard}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Available Rooms"
+                               FontSize="14"
+                               Foreground="#64748B"/>
+
+                    <TextBlock x:Name="txtAvailableRooms"
+                               Text="0"
+                               FontSize="34"
+                               FontWeight="Bold"
+                               Foreground="#10B981"
+                               Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+            </Border>
+
+            <!-- REVENUE -->
+            <Border Style="{StaticResource StatCard}">
+
+                <StackPanel>
+
+                    <TextBlock Text="Today Revenue"
+                               FontSize="14"
+                               Foreground="#64748B"/>
+
+                    <TextBlock x:Name="txtRevenue"
+                               Text="0 VNĐ"
+                               FontSize="34"
+                               FontWeight="Bold"
+                               Foreground="#F59E0B"
+                               Margin="0,10,0,0"/>
+
+                </StackPanel>
+
+            </Border>
+
+        </UniformGrid>
+
+        <!-- ROOM TABLE -->
+        <Border Grid.Row="2"
+                Background="White"
+                CornerRadius="12"
+                Margin="25,20,25,20">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+
+                <!-- TITLE -->
+                <TextBlock Text="Room List"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           Margin="20,15,0,0"
+                           Foreground="#1E293B"/>
+
+                <!-- DATAGRID -->
+                <DataGrid x:Name="dgRooms"
+                          Grid.Row="1"
+                          Margin="15"
+                          AutoGenerateColumns="False"
+                          HeadersVisibility="Column"
+                          CanUserAddRows="False"
+                          IsReadOnly="True">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="Room ID"
+                                            Binding="{Binding RoomID}"
+                                            Width="100"/>
+
+                        <DataGridTextColumn Header="Room Name"
+                                            Binding="{Binding RoomName}"
+                                            Width="150"/>
+
+                        <DataGridTextColumn Header="Type"
+                                            Binding="{Binding Type}"
+                                            Width="150"/>
+
+                        <DataGridTextColumn Header="Price"
+                                            Binding="{Binding Price}"
+                                            Width="150"/>
+
+                        <DataGridTextColumn Header="Status"
+                                            Binding="{Binding Status}"
+                                            Width="150"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

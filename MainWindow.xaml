@@ -1,0 +1,122 @@
+﻿<Window x:Class="SmartHotelManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SmartHotelManagement" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+Title="Smart Hotel Dashboard"
+        Height="650"
+        Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#F8FAFC">
+
+    <!-- STYLE -->
+    <Window.Resources>
+
+        <!-- Button Sidebar -->
+        <Style x:Key="SideMenuButton" TargetType="Button">
+
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="#94A3B8"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Margin" Value="10,2"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="Padding" Value="15,0,0,0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Style.Resources>
+
+            <Style.Triggers>
+
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1E293B"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+
+                <Trigger Property="IsFocused" Value="True">
+                    <Setter Property="Background" Value="#3B82F6"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
+    </Window.Resources>
+
+    <!-- MAIN -->
+    <Grid>
+
+        <!-- COLUMN -->
+        <Grid.ColumnDefinitions>
+
+            <!-- Sidebar -->
+            <ColumnDefinition Width="220"/>
+
+            <!-- Content -->
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <!-- SIDEBAR -->
+        <Border Grid.Column="0"
+                Background="#0F172A">
+
+            <StackPanel>
+
+                <!-- Logo -->
+                <TextBlock Text="SMART HOTEL"
+                           Foreground="White"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Margin="0,30,0,40"
+                           HorizontalAlignment="Center"/>
+
+                <!-- MENU -->
+
+                <Button Content="Dashboard"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Dashboard_Click"/>
+
+                <Button Content="Room Management"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Room_Click"/>
+
+                <Button Content="Bookings"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Booking_Click"/>
+
+                <Button Content="Customers"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Customer_Click"/>
+
+                <Button Content="Services"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Service_Click"/>
+
+                <Button Content="Settings"
+                        Style="{StaticResource SideMenuButton}"
+                        Click="Setting_Click"/>
+
+            </StackPanel>
+
+        </Border>
+
+        <!-- CONTENT -->
+        <Grid Grid.Column="1">
+
+            <!-- CHỈ PHẦN NÀY THAY ĐỔI -->
+            <ContentControl x:Name="MainContent"/>
+
+        </Grid>
+
+    </Grid>
+
+</Window>

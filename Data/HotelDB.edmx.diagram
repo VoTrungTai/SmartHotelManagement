@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7ea3f186471f43a6b3dbdc05f1c4821b" Name="Diagram1">
+        <EntityTypeShape EntityType="Hotel.Bill" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.BookingDetail" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.Booking" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.Customer" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.RoomType" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.ServiceOrder" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.Service" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="Hotel.User" Width="1.5" PointX="7.75" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="Hotel.FK__Bill__BookingID__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="Hotel.FK__BookingDe__Booki__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="Hotel.FK__Bookings__Custom__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="Hotel.FK__ServiceOr__Booki__6FE99F9F" ManuallyRouted="false" />
+        <AssociationConnector Association="Hotel.FK__ServiceOr__Servi__70DDC3D8" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Hotel.Room" Width="1.5" PointX="2.75" PointY="1.75" />
+        <AssociationConnector Association="Hotel.FK__BookingDe__RoomI__6B24EA82" />
+        <AssociationConnector Association="Hotel.FK__Rooms__RoomTypeI__619B8048" />
+      </Diagram>
+      <Diagram DiagramId="f3633670898e4c32b41d2bf6710dafbd" Name="Diagram2" >
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
